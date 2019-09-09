@@ -37,7 +37,7 @@ bool palindromePermutationBitwise(const string& str)
        if(i < 0) continue;
        toggle(count, i);
     }
-    return (count & (count-1) == 0);
+    return (count == 0 || count & (count-1) == 0);
 }
 
 int main()

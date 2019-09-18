@@ -14,11 +14,17 @@ struct Node{
 struct List{
     Node* _root = nullptr;
     Node* _tail = nullptr;
+    size_t _size = 0;
 
+    size_t size()
+    {
+        return _size;
+    }
     void add(int ele)
     {
         Node* temp = new Node(ele);
         this->add(temp);
+        _size++;
     }
 
     void add(Node* n)
@@ -30,6 +36,7 @@ struct List{
         }
         _tail->next = n;
         _tail = n;
+        _size++;
     }
 
     void add(List* pLists)
@@ -42,6 +49,7 @@ struct List{
             _tail->next = pLists->_root;
             _tail  = pLists->_tail;
         }
+        _size += pLists->_size;
     }
 
     void display()

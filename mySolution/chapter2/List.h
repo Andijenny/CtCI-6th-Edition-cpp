@@ -109,8 +109,9 @@ struct BList{
     void display()
     {
         Node* n = _root;
+        std::cout << "NULL<->";
         while(n != nullptr) {
-            std::cout << n->_ele << "->";
+            std::cout << n->_ele << "<->";
             n = n->next;
         }
         std::cout << "NULL" << std::endl;
